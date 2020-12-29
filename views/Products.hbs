@@ -1,34 +1,33 @@
+<header class="main-header">
+    <nav class="main-header__nav">
+        <ul class="main-header__item-list">
+            <li class="main-header__item"><a class="active" href="/">Shop</a></li>
+            <li class="main-header__item"><a href="/admin/add-product">Add Product</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <header class="main-header">
-        <nav class="main-header__nav">
-            <ul class="main-header__item-list">
-                <li class="main-header__item"><a class="active" href="/">Shop</a></li>
-                <li class="main-header__item"><a href="/admin/add-product">Add Product</a></li>
-            </ul>
-        </nav>
-    </header>
+<main>
+    <h1><b>My Products</b></h1>
+    {{#if hasProducts}}
+    <p>List of all the products...</p>
 
-    <main>
-        <h1><b>My Products</b></h1>
-        {{#if hasProducts}}
-        <p>List of all the products...</p>
-        
-        <ul>{{#each prds}}
-<li>
-    {{this.prd}}
-</li>
-            {{/each}}
-        </ul> 
-        {{else}}
-        No Produts found!
-       {{/if}}
-        <form class="product-form" action="/products" method="POST">
-            <div class="form-control">
-                <label for="title">Title</label>
-                <input type="text" name="product" id="title">
-            </div>
+    <ul>{{#each prds}}
+        <li>
+            {{this.FirstName}} {{this.LastName}}
+        </li>
+        {{/each}}
+    </ul>
+    {{else}}
+    No Produts found!
+    {{/if}}
+    <form class="product-form" action="/products" method="POST">
+        <div class="form-control">
+            <label for="title">Title</label>
+            <input type="text" name="product" id="title">
+        </div>
 
-            <button type="submit">Add Product</button>
-        </form>
- 
-    </main>
+        <button type="submit">Add Product</button>
+    </form>
+
+</main>
